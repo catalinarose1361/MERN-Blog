@@ -27,7 +27,10 @@ const Post = mongoose.model("Post", postSchema);
 
 //api routes
 
-    //grabbing all posts from our mongoDB 
+    //grabbing all posts from our mongoDB and 
+    //sending that data to the front end in json format
+    //whenever the route is called
+    
 app.get('/posts', function(req, res) {
     Post.find().then(posts => res.json(posts));
 });
