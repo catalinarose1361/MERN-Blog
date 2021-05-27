@@ -5,13 +5,15 @@ const cors = require("cors");
 const path = require("path");
 const port = process.env.PORT || 5000;
 
+require('dotenv').config()
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors());
 
 //MongoDB Atlas Connection String
-mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogDB?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGODB_URI);
 
 // mongoose 
 const postSchema = {
