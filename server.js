@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 //MongoDB Atlas Connection String
-mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogDB?retryWrites=true&w=majority");
 
 // mongoose 
 const postSchema = {
@@ -19,16 +19,17 @@ const postSchema = {
     author: String,
     body: String,
     date: Date
-}
+};
 
-const Post = mongoose.model("Post", postSchema)
+const Post = mongoose.model("Post", postSchema);
 
 //api routes
 
-app.get('/', function(req, res) {
-    res.send("express is working");
+    //grabbing all posts from our mongoDB 
+app.get('/posts', function(req, res) {
+    Post.find().then(posts => res.json(posts));
 });
-
+// express server
 app.listen(port, function() {
     console.log("express is running")
 })
