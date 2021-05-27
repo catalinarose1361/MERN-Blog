@@ -10,7 +10,19 @@ app.use(express.json());
 
 app.use(cors());
 
-// mongoose
+//MongoDB Atlas Connection String
+mongoose.connect("mongodb+srv://catalina-admin:fliaJUchyWudg52g@cluster0.xttdr.mongodb.net/blogDB?retryWrites=true&w=majority")
+
+// mongoose 
+const postSchema = {
+    title: String,
+    author: String,
+    body: String,
+    date: Date
+}
+
+const Post = mongoose.model("Post", postSchema)
+
 //api routes
 
 app.get('/', function(req, res) {
