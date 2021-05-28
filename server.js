@@ -34,6 +34,30 @@ const Post = mongoose.model("Post", postSchema);
 app.get('/posts', function(req, res) {
     Post.find().then(posts => res.json(posts));
 });
+
+
+//add movie
+
+app.post('/newPost', function(req, res) {
+   //deconstructing the object sent fron the front end
+   const title = req.body.title;
+   const author = req.body.author;
+   const body = req.body.body;
+   const date = req.body.date;
+   //creating new movie in DB using our model Movie
+   const newPost = new Post({
+       title,
+       author,
+       body,
+       date
+   })
+    //saving our new post
+    newPost.save()
+})
+
+
+
+
 // express server
 app.listen(port, function() {
     console.log("express is running")
