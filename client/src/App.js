@@ -100,14 +100,14 @@ function App() {
 
         return (
 
-          <form>
+          <div>
             <h1>{post.title}</h1>
             <h2>{post.author}</h2>
             <p>{post.body}</p>
             <p>{post.date}</p>
             
             <button onClick={() => deletePost(post._id)}>DELETE</button>
-          </form>
+          </div>
         
         )
 
