@@ -15,7 +15,7 @@ function App() {
       title: " ",
       author: " ",
       body: " ",
-      date: null,
+      date: " ",
     }
   ]);
 
