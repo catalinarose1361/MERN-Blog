@@ -36,7 +36,7 @@ app.get('/posts', function(req, res) {
 });
 
 
-//add movie
+//add post
 
 app.post('/newPost', function(req, res) {
    //deconstructing the object sent fron the front end
@@ -53,6 +53,22 @@ app.post('/newPost', function(req, res) {
    })
     //saving our new post
     newPost.save()
+})
+
+//remove post
+app.delete('/delete/:id', function(req, res) {
+
+    //reconstruct id
+    const id = req.params.id;
+
+    //when the id of the model matches this id, delete
+    Post.findByIdAndDelete({_id: id}, function(err) {
+        if(!err) {
+            console.log("Post Removed Sucessfully");
+        } else console.log("Error post cannot be removed")
+    })
+
+
 })
 
 

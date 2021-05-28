@@ -26,7 +26,7 @@ function App() {
       title: " ",
       author: " ",
       body: " ",
-      date: null,
+      date: " ",
     }
   );
 //CONNECTING TO BACKEND DATA AND DISPLAYING THAT DATA ON THE FRONT END
@@ -62,6 +62,7 @@ function App() {
   }
    //addPost function
   function addPost(e) {
+    //a preventDefault is called on the event when submitting the form to prevent a browser reload/refresh.
     e.preventDefault();
     //gets value from state variable post
     const newPost = {
@@ -73,6 +74,13 @@ function App() {
     //posts newPost variable to proxy 
     axios.post('/newPost', newPost)
   }
+  // REMOVING POST DATA FROM MONGODB
+
+  function deletePost(id){
+    axios.delete('/delete/' + id)
+    alert("Post Removed")
+  }
+  
   // input names are required to parse from body req in our server
   //value is set to whatever value was saved in state variable post
   return (
@@ -92,13 +100,14 @@ function App() {
 
         return (
 
-          <div>
+          <form>
             <h1>{post.title}</h1>
             <h2>{post.author}</h2>
             <p>{post.body}</p>
             <p>{post.date}</p>
-            <button>DELETE</button>
-          </div>
+            
+            <button onClick={() => deletePost(post._id)}>DELETE</button>
+          </form>
         
         )
 
@@ -109,47 +118,3 @@ function App() {
 }
 
 export default App;
-
-// import {useState, useEffect} from 'react'
-
-// import './App.css';
-
-// function App() {
-//   //using state which at first is empty but soon will store data collected from our MongoDB 
-//   const [movies, setMovies] = useState([
-//     {
-//       title: " ",
-//       genre: " ",
-//       year: " "
-//     }
-//   ])
-//   //fetch the data from the route and return a json
-//   useEffect(() => {
-//     fetch('/movies').then(res => {
-//       if(res.ok) {
-//         return res.json()
-//       }
-//       //take json response and set state equal to the json response
-//     }).then(jsonRes => setMovies(jsonRes))
-//   })
-
-//   return (
-//     <div className="App">
-
-//       {movies.map(movie => {
-//         return (
-//           <div>
-//             <h1>{movie.title}</h1>
-//             <p>{movie.genre}</p>
-//             <p>{movie.year}</p>
-//             <button>DELETE</button>
-//           </div>
-        
-//         )
-//       })}
-
-//     </div>
-//   );
-// }
-
-// export default App;
