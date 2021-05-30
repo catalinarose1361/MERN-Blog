@@ -1,5 +1,5 @@
-import './App.css';
-import {useState, useEffect} from 'react'
+
+import {React, useState, useEffect} from 'react'
 import axios from "axios";
 import { Grommet, Button, TextInput, TextArea } from 'grommet';
 
@@ -90,7 +90,7 @@ function App() {
   //value is set to whatever value was saved in state variable post
   return (
     <Grommet plain>
-      <div className="App">
+    
 
         <h1>Add Post</h1>
 
@@ -143,7 +143,7 @@ function App() {
             </div>
           )
         })}
-      </div>
+      
     </Grommet>
   );
 }
