@@ -18,7 +18,7 @@ app.use(cors());
 //MongoDB Atlas Connection String
 mongoose.connect(process.env.MONGODB_URI);
 // app.use(require("./routes/api.js"));
-app.use("/api", routes);
+app.use(routes);
 
 //when in production connect the back end to the static build files
 if(process.env.NODE_ENV === 'production') {
