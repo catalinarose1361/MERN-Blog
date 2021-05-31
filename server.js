@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-// const routes = require("./routes/api.js")
+const routes = require("./routes/api.js")
 const port = process.env.PORT || 5000;
 // const Post = require("./models")
 
@@ -17,8 +17,8 @@ app.use(cors());
 
 //MongoDB Atlas Connection String
 mongoose.connect(process.env.MONGODB_URI);
-app.use(require("./routes/api.js"));
-// app.use(routes);
+// app.use(require("./routes/api.js"));
+app.use("/", routes);
 
 //when in production connect the back end to the static build files
 if(process.env.NODE_ENV === 'production') {
