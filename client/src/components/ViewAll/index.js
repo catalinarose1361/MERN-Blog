@@ -18,7 +18,7 @@ function ViewAll(props)  {
               <h2>{props.author}</h2>
               <p>{props.body}</p>
               <p>{props.date}</p>
-              <Button onClick={() => props.deletePost(props.id._id)} label="Delete Post" />
+              <Button onClick={() => props.deletePost(props.id)} label="Delete Post" />
             
             </Grommet>
           )

@@ -42,14 +42,24 @@ const AllPosts = () => {
   {posts.map(post => {
   
     return (
-      
-        <div>
-      <h1>{post.title}</h1>
-      <h2>{post.author}</h2>
-      <p>{post.body}</p>
-      <p>{post.date}</p>
-      <Button onClick={() => deletePost(post._id)} label="Delete Post" />
-      </div>
+      <ViewAll
+        title={post.title}
+        author={post.author}
+        body={post.body}
+        date={post.date}
+        id={post._id}
+        deletePost={deletePost}
+
+
+
+      />
+      //   <div>
+      // <h1>{post.title}</h1>
+      // <h2>{post.author}</h2>
+      // <p>{post.body}</p>
+      // <p>{post.date}</p>
+      // <Button onClick={() => deletePost(post._id)} label="Delete Post" />
+      // </div>
       
     )
   
