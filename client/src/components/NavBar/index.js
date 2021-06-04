@@ -5,8 +5,8 @@ function NavBar() {
     return (
         <Grommet>
         <Header background="brand">
-  <Button href={"/"}  hoverIndicator />
-  <Button href={"createPost"}  hoverIndicator />
+  <Button href={"/"} label={"View Posts"} hoverIndicator />
+  <Button href={"createPost"} label={"Create Post"} hoverIndicator />
   
 </Header>
 </Grommet>

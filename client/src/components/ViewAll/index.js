@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grommet, Button } from "grommet"
+import { Grommet, Card, CardHeader, CardBody, CardFooter, Button } from "grommet"
 
 
 function ViewAll(props)  {
@@ -13,12 +13,23 @@ function ViewAll(props)  {
           return(
 
             <Grommet>
-
-              <h1>{props.title}</h1>
+              <Card  height="medium" width="medium" background="light-1">
+      <CardHeader pad="medium">{props.title}</CardHeader>
+      <CardBody pad="medium">
+      
+      
               <h2>{props.author}</h2>
               <p>{props.body}</p>
               <p>{props.date}</p>
               <Button onClick={() => props.deletePost(props.id)} label="Delete Post" />
+      
+      </CardBody>
+      <CardFooter pad={{horizontal: "small"}} background="light-2">   
+     
+   
+    </CardFooter>
+</Card>
+              
             
             </Grommet>
           )

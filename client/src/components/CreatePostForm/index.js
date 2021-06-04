@@ -7,6 +7,7 @@ function CreatePostForm(props) {
         <Grommet>
        <Box
   direction="row"
+  
   fill={true}
   border={{ color: 'brand', size: 'large' }}
   pad="medium"
