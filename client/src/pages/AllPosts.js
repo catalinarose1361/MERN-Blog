@@ -53,13 +53,7 @@ const AllPosts = () => {
 
 
       />
-      //   <div>
-      // <h1>{post.title}</h1>
-      // <h2>{post.author}</h2>
-      // <p>{post.body}</p>
-      // <p>{post.date}</p>
-      // <Button onClick={() => deletePost(post._id)} label="Delete Post" />
-      // </div>
+    
       
     )
   

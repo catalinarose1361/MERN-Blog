@@ -7,21 +7,21 @@ router.get('/posts', function(req, res) {
 });
 
 // ADD POST
-
+//RECEIVING A POST REQUEST FROM THE FRONT END
 router.post('/newPost', function(req, res) {
    //deconstructing the object sent fron the front end
    const title = req.body.title;
    const author = req.body.author;
    const body = req.body.body;
    const date = req.body.date;
-   //creating new movie in DB using our model Movie
+   //creating new POST in DB using our model POST
    const newPost = new Post({
        title,
        author,
        body,
        date
    })
-    //saving our new post
+    //SAVING NEW POST TO MONGODB ATLAS
     newPost.save()
 })
 

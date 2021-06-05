@@ -6,8 +6,6 @@ const path = require("path");
 const routes = require("./routes/api.js")
 const port = process.env.PORT || 5000;
 
-
-
 require('dotenv').config()
 
 app.use(express.urlencoded({ extended: true }));
