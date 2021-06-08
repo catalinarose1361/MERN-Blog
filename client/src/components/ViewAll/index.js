@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Grommet, Card, CardHeader, CardBody, CardFooter, Button } from "grommet"
 
 
