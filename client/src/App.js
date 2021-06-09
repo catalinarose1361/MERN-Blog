@@ -4,6 +4,8 @@ import AllPosts from "./pages/AllPosts";
 import CreatePost from "./pages/CreatePost";
 import NavBar from "./components/NavBar"
 import NoMatch from "./pages/NoMatch"
+
+import FooterComp from "./components/FooterComp";
 function App() {
   return (
     <Router>
@@ -14,6 +16,7 @@ function App() {
           <Route exact path="/createPost" component={CreatePost} />
           <Route component={NoMatch} />
         </Switch>
+        <FooterComp />
       </div>
     </Router>
   )
