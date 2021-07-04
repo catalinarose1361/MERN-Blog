@@ -30,6 +30,7 @@ const CreatePost = () => {
       )
     })
   }
+  
 
     //addPost function
   function addPost(e) {
@@ -47,7 +48,8 @@ const CreatePost = () => {
     }
 
     //posts newPost variable to proxy 
-    axios.post('/newPost', newPost)
+    axios.post('/newPost', newPost);
+   
   }
 
     return (

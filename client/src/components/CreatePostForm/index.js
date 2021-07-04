@@ -44,6 +44,7 @@ function CreatePostForm(props) {
    />
 
    <Button onClick={props.addPost} primary label="Save Post" />
+   
 
  </form>
 </Box>

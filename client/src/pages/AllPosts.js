@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import ViewAll from "../components/ViewAll";
 import axios from "axios"
-import { Grommet, Button } from "grommet";
+import { Grommet, Button, Grid } from "grommet";
 
 
 const AllPosts = () => {
@@ -39,25 +39,37 @@ const AllPosts = () => {
   }
   return(
     <Grommet>
-  {posts.map(post => {
+            <Grid
+  rows={['medium', 'large']}
+  columns={['large', 'xlarge']}
+  gap="small"
+ 
+>
+
+{posts.map(post => {
   
-    return (
-      <ViewAll
-        title={post.title}
-        author={post.author}
-        body={post.body}
-        date={post.date}
-        id={post._id}
-        deletePost={deletePost}
+  return (
+
+    <ViewAll
+      title={post.title}
+      author={post.author}
+      body={post.body}
+      date={post.date}
+      id={post._id}
+      deletePost={deletePost}
 
 
 
-      />
+    />
+  
     
-      
-    )
-  
-  })}
+  )
+
+})}
+
+
+</Grid>
+ 
   </Grommet>
   )
   
