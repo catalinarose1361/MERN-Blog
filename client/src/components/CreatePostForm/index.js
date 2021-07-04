@@ -40,6 +40,7 @@ function CreatePostForm(props) {
    value={props.date}
    onChange={props.handleChange}
    name="date"
+   placeholder="mm/dd/yyyy"
    />
 
    <Button onClick={props.addPost} primary label="Save Post" />
@@ -58,38 +59,3 @@ function CreatePostForm(props) {
   }
 
 export default CreatePostForm
-// {/* <h1>Add Post</h1> */}
-
-//         <form>
-
-//           <TextInput
-//           placeholder="title"
-//           value={post.title}
-//           onChange={handleChange}
-//           name="title"
-//           />
-
-//           <TextInput
-//           placeholder="author"
-//           value={post.author}
-//           onChange={handleChange}
-//           name="author"
-//           />
-
-//           <TextArea
-//           placeholder="body"
-//           value={post.body}
-//           onChange={handleChange}
-//           name="body"
-//           />
-
-//           <TextInput
-//           format="mm/dd/yyyy"
-//           value={post.date}
-//           onChange={handleChange}
-//           name="date"
-//           />
-
-//           <Button onClick={addPost} primary label="Save Post" />
-
-//         </form>

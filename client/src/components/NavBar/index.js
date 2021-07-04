@@ -4,7 +4,7 @@ import { FormDown, Book, Edit, Slack } from 'grommet-icons';
 function NavBar() {
     return (
         <Grommet>
-            <Nav alignSelf="center" direction="row" background="brand" pad="medium">
+            <Nav direction="row" background="brand" pad="medium">
     <Anchor  href={"/createPost"} icon={<Edit size="large" />} hoverIndicator />
    
     <Anchor href={"/"} icon={<Book size="large" />} hoverIndicator />
