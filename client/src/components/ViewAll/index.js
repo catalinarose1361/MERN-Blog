@@ -1,38 +1,34 @@
 import React from "react";
-import { Grommet, Card, CardHeader, CardBody, CardFooter, Button, Grid } from "grommet"
+import { Card, CardHeader, CardBody, CardFooter, Button } from "grommet"
 
-function ViewAll(props)  {
+function ViewAll(props) {
 
-  console.log("viewAll", props)
+  // console.log("viewAll", props)
   
   return(
 
-   
+    <Card  height="large" width="large" background="light-1">
 
+      <CardHeader pad="medium">{props.title}</CardHeader>
 
-<Card  height="medium" width="medium" background="light-1">
+      <CardBody pad="medium">
 
-<CardHeader pad="medium">{props.title}</CardHeader>
+        <h2>{props.author}</h2>
+        <p>{props.body}</p>
+        <p>{props.date}</p>
 
-<CardBody pad="medium">
+       
 
-  <h2>{props.author}</h2>
-  <p>{props.body}</p>
-  <p>{props.date}</p>
+      </CardBody>
 
-  <Button onClick={() => props.deletePost(props.id)} label="Delete Post" />
+      <CardFooter pad={{horizontal: "small"}} background="light-2">
+        
+        <Button onClick={() => props.deletePost(props.id)} label="Delete Post" alignSelf="center"
+ />
+        
+      </CardFooter>
 
-</CardBody>
-
-<CardFooter pad={{horizontal: "small"}} background="light-2"></CardFooter>
-
-</Card>
-
-
-
- 
-              
-   
+    </Card>
   )   
 }
 
